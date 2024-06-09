@@ -1,0 +1,331 @@
+body {
+  background-color: #f5f5f5;
+  color: #4e4e4e;
+  position: relative;
+}
+/* arrow-up */
+.arrow {
+  position: fixed;
+  top: 90%;
+  text-decoration: none;
+  right: 1%;
+  z-index: 33;
+}
+
+.arrow span {
+  width: 40px;
+  height: 40px;
+}
+/* Nav */
+nav {
+  font-weight: 500;
+}
+
+.ha-b a:hover {
+  color: #0078ff !important;
+  background-color: white !important;
+}
+
+.deep {
+  display: inline-block;
+  position: relative;
+}
+.deep-options {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color:#fff;
+}
+.deep:hover .deep-options {
+  display: block;
+}
+
+.p-move .nav-link {
+  position: relative;
+  color: white;
+}
+
+.p-move .nav-link:hover {
+  color: white;
+}
+
+.p-move > a::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  top: 90%;
+  left: 8px;
+  transition: width 0.3s ease-in-out;
+}
+
+.p-move a:hover::before,
+.p-move .active::before {
+  width: 70%;
+}
+
+nav .menu-btn i {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"] {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .p-move a:hover::before,
+  .p-move .active::before {
+    width: 0%;
+  }
+  nav .menu-btn i {
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  nav ul {
+    position: fixed;
+    top: 60px;
+    left: -115%;
+    background: white;
+    height: 90vh;
+    width: 94%;
+    display: block;
+    padding-top: 1rem;
+    transform: translateX(3%);
+    transition: all 0.3s ease;
+  }
+  .layer {
+    box-shadow: -50px 0px 10px 100px rgba(255, 255, 255, 0.4);
+  }
+
+  #click:checked ~ ul {
+    left: 0;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 0.2rem 2rem;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    color: black !important;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    color: #0078ff !important;
+    background-color: white !important;
+  }
+  .deep-options {
+    left: 15%;
+    top: 0;
+  }
+}
+/* Header */
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/hero-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 44;
+}
+
+header h1 {
+  font-size: 4.5rem;
+}
+
+.typed-cursor {
+  opacity: 1;
+}
+.typed-cursor.typed-cursor--blink {
+  animation: typedjsBlink 0.7s infinite;
+  -webkit-animation: typedjsBlink 0.7s infinite;
+  animation: typedjsBlink 0.7s infinite;
+}
+@keyframes typedjsBlink {
+  50% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes typedjsBlink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* About */
+h3::after {
+  content: "";
+  width: 100px;
+  height: 3.5px;
+  background-color: #0078ff;
+  position: absolute;
+  top: 125%;
+  left: 0px;
+}
+
+/* Services */
+.shape::after {
+  content: "";
+  width: 50px;
+  height: 5px;
+  background-color: #0078ff;
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.shape-2 {
+  width: 120px;
+  height: 120px;
+  border: #0078ff 10px solid;
+  transition: 0.2s 0s linear;
+}
+
+.shape-2:hover {
+  background-color: #0078ff;
+  border-color: #cde1f8;
+}
+
+.shape-2 i {
+  color: black;
+  font-size: 2.5rem;
+  transition: 0.2s 0s linear;
+}
+
+.shape-2:hover i {
+  color: white;
+}
+
+/* Counters */
+.count {
+  background-image: linear-gradient(
+      rgba(0, 120, 255, 0.6),
+      rgba(0, 120, 255, 0.6)
+    ),
+    url(../images/counters-bg.jpg);
+}
+
+.feature {
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.shape-3 {
+  width: 80px;
+  height: 80px;
+  border: #cde1f8 10px solid;
+}
+
+/* Portfolio */
+.shape-4 {
+  width: 40px;
+  height: 40px;
+  top: 80%;
+  right: 5%;
+}
+
+.pic-zoom img {
+  transition: 1s 0s;
+}
+
+.pic-zoom:hover img {
+  transform: scale(1.25);
+}
+
+.pf {
+  font-size: 0.8rem;
+}
+
+/* Testimonial */
+.test {
+  background-image: linear-gradient(
+      rgba(0, 120, 255, 0.6),
+      rgba(0, 120, 255, 0.6)
+    ),
+    url(../images/overlay-bg.jpg);
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 1rem 0.2rem;
+}
+
+/* Blog */
+.pic-blog img {
+  height: 35px;
+  width: 35px;
+}
+
+.pic-blog {
+  border: rgba(0, 0, 0, 0.175) 1px solid;
+}
+
+.pic-blog a {
+  color: black;
+}
+
+.pic-blog a:hover {
+  color: #0078ff;
+}
+
+/* Contact */
+form button {
+  background-color: #0078ff;
+  padding: 10px 25px;
+  border-radius: 100vh;
+  border: white 5px solid;
+  transition: background-color 0.2s 0s, border-color 0.15s 0.1s;
+}
+
+form button:hover {
+  background-color: #3393ff;
+  border-color: #cee2f8;
+}
+
+.con-icon {
+  width: 50px;
+  height: 50px;
+  border-width: 3.5px;
+}
+
+input,
+textarea {
+  border: 1.5px solid #eff0f3;
+  outline: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+  border: #0078ff 1.5px solid;
+  box-shadow: 0px 0px 0px 3px #c2dbfe;
+}
+/* footer */
+footer {
+  background-color: #0062d3;
+}
